@@ -10,6 +10,13 @@ body {
   margin: 0;
 }
 
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 .app {
   background-color: var(--primary);
   min-height: 100vh;
@@ -22,12 +29,13 @@ body {
 }
 
 .container {
-  min-width: 80%;
-  padding: 2em;
+  max-width: 80%;
+  padding: 1em;
+  gap: 1em;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
-  flex-direction: coulumn;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -35,17 +43,13 @@ body {
 .header {
   min-height: 2em;
   box-sizing: border-box;
-  padding: 1em;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: var(--accent);
 }
 
 .search-input {
-  width: 20em;
+  max-width: 20rem;
+  text-align: center;
   padding: 0.5em;
   border: 0;
   font-size: 1.25rem;
@@ -57,6 +61,7 @@ body {
   display: flex;
   background-color: var(--primary);
 }
+
 .search-input::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: var(--secondary);
@@ -66,4 +71,24 @@ body {
   color: var(--warning);
   user-select: none;
   letter-spacing: 0.5rem;
+}
+
+.search-result-container {
+  height: 300px;
+  width: 100%;
+  background-color: var(--secondary);
+}
+
+@media only screen and (min-width: 780px) {
+  .container {
+    max-width: 1240px;
+    padding: 1em;
+    gap: 1em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

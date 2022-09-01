@@ -1,14 +1,14 @@
 import './App.css'
 import React from 'react'
 import Header from './Components/Header'
+import SearchResult from './Components/SearchResult'
 
 function App() {
   return (
     <div className="app">
-      <Header/>
-      <div className='container'>
-        <p>Hi there</p>
-      </div>
+      <Header />
+
+      <SearchResult />
     </div>
   )
 }

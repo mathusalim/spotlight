@@ -1,11 +1,13 @@
 import React from 'react'
-import Search from './Search'
+import SearchInput from './SearchInput'
 
 const Header = () => {
     return (
         <div className='header'>
-            <h1 className='page-title'>Spotlight</h1>
-            <Search />
+            <div className='container'>
+                <h1 className='page-title'>Spotlight</h1>
+                <SearchInput search={(term) => console.log(term)} />
+            </div>
         </div>
     )
 }
