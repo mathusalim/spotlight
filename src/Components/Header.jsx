@@ -5,7 +5,7 @@ import propTypes from "prop-types";
 const Header = ({ search }) => {
   return (
     <div className="header">
-      <div className="container grid">
+      <div className="container flex">
         <h1 className="page-title">Spotlight</h1>
         <SearchInput search={search} />
       </div>

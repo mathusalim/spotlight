@@ -1,18 +1,14 @@
 import "./App.css";
-import React, { useState } from "react";
-import Header from "./Components/Header";
-import SearchResult from "./Components/SearchResult";
+import React from "react";
+import Static from "./Pages/Static";
+import Navigation from "./Components/Navigation";
 
 function App() {
-  const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = (term) => {
-    setSearchResults(term.split(""));
-  };
   return (
     <div className="app">
-      <Header search={handleSearch} />
-      <SearchResult movies={searchResults} />
+      <Static />
+      <Navigation />
     </div>
   );
 }

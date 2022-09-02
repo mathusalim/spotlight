@@ -20,7 +20,7 @@ h3 {
 .app {
   background-color: var(--primary);
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -31,12 +31,12 @@ h3 {
 .container {
   max-width: 80%;
   padding: 1em;
-  gap: 1em;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
-.grid {
+.flex {
+  gap: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,6 +76,10 @@ h3 {
   letter-spacing: 0.5rem;
 }
 
+h2 {
+  text-align: center;
+}
+
 .search-result-container {
   min-height: 300px;
   padding-top: 2em;
@@ -104,13 +108,40 @@ h3 {
     forwards;
 }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+  opacity: 0.5;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  opacity: 0.5;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 780px) {
-  .grid {
+  .flex {
     display: flex;
+    gap: 1em;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
+  h2 {
+    text-align: left;
+    font-weight: 'bolder';
+  }
+  .scroll {
+  overflow-x: auto;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
 }
 
 @keyframes wiggle {
