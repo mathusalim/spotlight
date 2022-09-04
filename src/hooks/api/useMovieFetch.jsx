@@ -5,11 +5,11 @@ const useMovieFetch = () => {
   const { get } = useOMDBApi()
 
   const getMovieDetails = (id) => {
-    return get('http://www.omdbapi.com/', { i: id })
+    return get('https://www.omdbapi.com/', { i: id })
   }
 
   const getPoster = (id) => {
-    return get('http://img.omdbapi.com/', { i: id })
+    return get('https://img.omdbapi.com/', { i: id })
   }
 
   const searchMovies = (filter) => {

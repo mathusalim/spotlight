@@ -12,7 +12,6 @@ const Static = () => {
   const dispatch = useDispatch();
 
   const handleSearch = (term) => {
-    console.log(term);
     const result = searchMovies((x) => {
       return x.Title.toLowerCase().includes(term.toLowerCase());
     });
