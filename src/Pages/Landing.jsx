@@ -7,9 +7,8 @@ const Landing = () => {
   const { getChunk } = useMovieFetch();
   const [movies, setMovies] = useState([]);
   useEffect(
-    () => async () => {
-      setMovies(await getChunk(2));
-    },
+    () => setMovies(getChunk(2).then((movies) => setMovies(movies))),
+
     []
   );
 

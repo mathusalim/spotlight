@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { Play } from "react-feather";
-import { NavLink, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setHidden } from "../features/search/searchPanel";
 import ActionButton from "../Components/ActionButton/ActionButton";
 import useMovieFetch from "../hooks/api/useMovieFetch";
 import Loading from "../Components/Loader/Loading";
 import DetailsTextContainer from "../Components/ProductDetails/DetailsTextContainer";
 import DetailsGenre from "../Components/ProductDetails/DetailsGenre";
+import { setHidden } from "../features/search/searchPanel";
 
 const ProductDetails = () => {
   const [movie, setMovie] = useState();
+  const navigate = useNavigate();
   const { getMovieDetails } = useMovieFetch();
-  const { dispatch } = useDispatch();
+  const dispatch = useDispatch();
   const { id } = useParams();
+
+  const handleClick = () => {
+    navigate(`/present/${id}`);
+  };
 
   useEffect(() => {
     getMovieDetails(id).then((movie) => {
+      dispatch(setHidden());
       setMovie(movie);
     });
   }, [id]);
@@ -50,16 +56,8 @@ const ProductDetails = () => {
             <p>{movie.Plot}</p>
             <div className="flex">
               <h2>{movie.Runtime}</h2>
-              <ActionButton type="full">
-                <NavLink
-                  to={`peresent/${id}`}
-                  replace={true}
-                  onClick={() => {
-                    dispatch(setHidden);
-                  }}
-                >
-                  <Play color="#f6511d" />
-                </NavLink>
+              <ActionButton type="full" handleClick={handleClick.bind(this)}>
+                <Play color="#f6511d" />
               </ActionButton>
             </div>
           </DetailsTextContainer>

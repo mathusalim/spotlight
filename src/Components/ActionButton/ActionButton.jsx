@@ -6,16 +6,48 @@ import {
   StyledRightActionButton,
 } from "./ActionButton.styles";
 
-const ActionButton = ({ children, type }) => {
+const ActionButton = ({ children, type, handleClick }) => {
   switch (type) {
     case "left":
-      return <StyledLeftActionButton>{children}</StyledLeftActionButton>;
+      return (
+        <StyledLeftActionButton
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          {children}
+        </StyledLeftActionButton>
+      );
     case "right":
-      return <StyledRightActionButton>{children}</StyledRightActionButton>;
+      return (
+        <StyledRightActionButton
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          {children}
+        </StyledRightActionButton>
+      );
     case "full":
-      return <StyledFullActionButton>{children}</StyledFullActionButton>;
+      return (
+        <StyledFullActionButton
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          {children}
+        </StyledFullActionButton>
+      );
     default:
-      return <StyledActionButton>{children}</StyledActionButton>;
+      return (
+        <StyledActionButton
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          {children}
+        </StyledActionButton>
+      );
   }
 };
 
