@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/spotlight/static/css/main.7a557125.css",
+    "main.js": "/spotlight/static/js/main.4e80e0e9.js",
+    "static/js/787.2ab7662f.chunk.js": "/spotlight/static/js/787.2ab7662f.chunk.js",
+    "index.html": "/spotlight/index.html",
+    "main.7a557125.css.map": "/spotlight/static/css/main.7a557125.css.map",
+    "main.4e80e0e9.js.map": "/spotlight/static/js/main.4e80e0e9.js.map",
+    "787.2ab7662f.chunk.js.map": "/spotlight/static/js/787.2ab7662f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a557125.css",
+    "static/js/main.4e80e0e9.js"
+  ]
+}
