@@ -1,5 +1,6 @@
-import React from 'react'
-import MovieItem from './MovieItem/MovieItem'
+import React from "react";
+import Loading from "./Loader/Loading";
+import MovieItem from "./MovieItem/MovieItem";
 
 const SearchResult = ({ data }) => {
   return (
@@ -7,19 +8,18 @@ const SearchResult = ({ data }) => {
       {data.movies?.length > 0 && (
         <div className="container flex scroll">
           {data.movies.map((item) => (
-            <MovieItem key={item.id} movie={item} className="movieHolder" />
+            <MovieItem
+              key={item.id}
+              movie={item}
+              forLanding={false}
+              className="movieHolder"
+            />
           ))}
         </div>
       )}
-      {data.movies?.length === 0 && (
-        <div className="container loader-container">
-          <div className="loader"></div>
-          <div className="loader"></div>
-          <div className="loader"></div>
-        </div>
-      )}
+      {data.movies?.length === 0 && <Loading></Loading>}
     </div>
-  )
-}
+  );
+};
 
-export default SearchResult
+export default SearchResult;

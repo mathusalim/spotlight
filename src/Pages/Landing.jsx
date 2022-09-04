@@ -1,43 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import MovieItem from '../Components/MovieItem/MovieItem'
-import useMovieFetch from '../hooks/api/useMovieFetch'
+import React, { useEffect, useState } from "react";
+import LandingGroup from "../Components/LandingGroup/LandingGroup";
+import Loading from "../Components/Loader/Loading";
+import useMovieFetch from "../hooks/api/useMovieFetch";
 
 const Landing = () => {
-  const { getChunk } = useMovieFetch()
-  const [movies, setMovies] = useState([])
+  const { getChunk } = useMovieFetch();
+  const [movies, setMovies] = useState([]);
   useEffect(
     () => async () => {
-      setMovies(await getChunk(2))
+      setMovies(await getChunk(2));
     },
-    [],
-  )
+    []
+  );
 
-  return (
+  return movies.length > 0 ? (
     <>
-      <h2 style={{ paddingBottom: '0.5em', paddingTop: '0.5em' }}>Fresh</h2>
-      <div className="flex scroll">
-        {movies[0]?.map((m) => (
-          <MovieItem
-            key={m.id}
-            className="movieHolder"
-            forLanding={true}
-            movie={m}
-          />
-        ))}
-      </div>
-      <h2 style={{ paddingBottom: '0.5em', paddingTop: '2em' }}>Trending</h2>
-      <div className="flex scroll">
-        {movies[1]?.map((m) => (
-          <MovieItem
-            key={m.id}
-            className="movieHolder"
-            forLanding={true}
-            movie={m}
-          />
-        ))}
-      </div>
+      <LandingGroup movies={movies[0]} title="Fresh"></LandingGroup>
+      <LandingGroup movies={movies[1]} title="Trending"></LandingGroup>
     </>
-  )
-}
+  ) : (
+    <Loading></Loading>
+  );
+};
 
-export default Landing
+export default Landing;

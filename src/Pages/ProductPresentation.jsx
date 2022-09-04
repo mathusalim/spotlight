@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const ProductPresentation = () => {
-    return (
-        <div>ProductPresentation</div>
-    )
-}
+  return (
+    <div style={{ width: "60vw" }}>
+      <video controls width="100%">
+        <source src="someVidToLoad" type="video/mp4" />
+      </video>
+    </div>
+  );
+};
 
-export default ProductPresentation
+export default ProductPresentation;

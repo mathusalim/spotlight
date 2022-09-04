@@ -1,8 +1,8 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Landing from '../Pages/Landing'
-import ProductDetails from '../Pages/ProductDetails'
-import ProductPresentation from '../Pages/ProductPresentation'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Landing from "../Pages/Landing";
+import ProductDetails from "../Pages/ProductDetails";
+import ProductPresentation from "../Pages/ProductPresentation";
 
 const Navigation = () => {
   return (
@@ -17,7 +17,7 @@ const Navigation = () => {
         </Route>
       </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
